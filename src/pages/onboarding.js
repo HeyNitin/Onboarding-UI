@@ -1,5 +1,8 @@
 import { Images } from "assets";
-import { OnboardingPages, OnboardingNavbar } from "components/onboarding/index";
+import {
+	OnboardingNavbar,
+	OnboardingScreens,
+} from "components/onboarding/index";
 import { useDocumentTitle } from "hooks/useDocumentTitle";
 
 const Onboarding = () => {
@@ -15,7 +18,7 @@ const Onboarding = () => {
 				<OnboardingNavbar />
 			</div>
 			<div>
-				<OnboardingPages />
+				<OnboardingScreens />
 			</div>
 		</div>
 	);

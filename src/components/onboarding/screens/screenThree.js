@@ -2,7 +2,7 @@ import { useUserData } from "context/userDataContext/userDataContext";
 import { Images } from "assets";
 import { showToast } from "components/toast/toast";
 
-const PageThree = () => {
+const ScreenThree = () => {
 	const { state, dispatch } = useUserData();
 
 	const submitHandler = () => {
@@ -50,4 +50,4 @@ const PageThree = () => {
 	);
 };
 
-export { PageThree };
+export { ScreenThree };

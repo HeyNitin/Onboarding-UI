@@ -1,7 +1,7 @@
 import { showToast } from "components/toast/toast";
 import { useUserData } from "context/userDataContext/userDataContext";
 
-const PageTwo = () => {
+const ScreenTwo = () => {
 	const { state, dispatch } = useUserData();
 
 	const submitHandler = () => {
@@ -55,4 +55,4 @@ const PageTwo = () => {
 	);
 };
 
-export { PageTwo };
+export { ScreenTwo };

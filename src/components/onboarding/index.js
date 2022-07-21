@@ -1,2 +1,2 @@
 export * from "components/onboarding/onboardingNavbar";
-export * from "components/onboarding/onboardingPages";
+export * from "components/onboarding/onboardingScreens";

@@ -1,27 +1,27 @@
 import { useUserData } from "context/userDataContext/userDataContext";
 import {
-	PageFour,
-	PageOne,
-	PageThree,
-	PageTwo,
-} from "components/onboarding/pages/index";
+	ScreenFour,
+	ScreenOne,
+	ScreenThree,
+	ScreenTwo,
+} from "components/onboarding/screens/index";
 
-const OnboardingPages = () => {
+const OnboardingScreens = () => {
 	const { state } = useUserData();
 
 	return (
 		<div>
 			{state.currentPage === 1 ? (
-				<PageOne />
+				<ScreenOne />
 			) : state.currentPage === 2 ? (
-				<PageTwo />
+				<ScreenTwo />
 			) : state.currentPage === 3 ? (
-				<PageThree />
+				<ScreenThree />
 			) : (
-				state.currentPage === 4 && <PageFour />
+				state.currentPage === 4 && <ScreenFour />
 			)}
 		</div>
 	);
 };
 
-export { OnboardingPages };
+export { OnboardingScreens };

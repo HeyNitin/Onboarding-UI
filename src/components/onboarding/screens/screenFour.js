@@ -1,7 +1,7 @@
 import { Images } from "assets";
 import { useUserData } from "context/userDataContext/userDataContext";
 
-const PageFour = () => {
+const ScreenFour = () => {
 	const { state } = useUserData();
 	return (
 		<div>
@@ -16,4 +16,4 @@ const PageFour = () => {
 		</div>
 	);
 };
-export { PageFour };
+export { ScreenFour };
