@@ -9,7 +9,7 @@ describe("Testing userData Reducer", () => {
 		},
 		workspaceURL: "",
 		usageType: "",
-		currentPage: 1,
+		currentScreen: 1,
 	};
 
 	test("Testing updating fullName of user", () => {
@@ -21,7 +21,7 @@ describe("Testing userData Reducer", () => {
 			},
 			workspaceURL: "",
 			usageType: "",
-			currentPage: 1,
+			currentScreen: 1,
 		};
 
 		const receivedValue = userDataReducer(initialValue, {
@@ -41,7 +41,7 @@ describe("Testing userData Reducer", () => {
 			},
 			workspaceURL: "",
 			usageType: "",
-			currentPage: 1,
+			currentScreen: 1,
 		};
 
 		const receivedValue = userDataReducer(initialValue, {
@@ -61,7 +61,7 @@ describe("Testing userData Reducer", () => {
 			},
 			workspaceURL: "",
 			usageType: "",
-			currentPage: 1,
+			currentScreen: 1,
 		};
 
 		const receivedValue = userDataReducer(initialValue, {
@@ -81,7 +81,7 @@ describe("Testing userData Reducer", () => {
 			},
 			workspaceURL: "www.nitinkalra.me",
 			usageType: "",
-			currentPage: 1,
+			currentScreen: 1,
 		};
 
 		const receivedValue = userDataReducer(initialValue, {
@@ -101,7 +101,7 @@ describe("Testing userData Reducer", () => {
 			},
 			workspaceURL: "",
 			usageType: "individual",
-			currentPage: 1,
+			currentScreen: 1,
 		};
 
 		const receivedValue = userDataReducer(initialValue, {
@@ -112,7 +112,7 @@ describe("Testing userData Reducer", () => {
 		expect(receivedValue).toEqual(expectedValue);
 	});
 
-	test("Testing updating currentPage of user", () => {
+	test("Testing updating currentScreen of user", () => {
 		const expectedValue = {
 			names: {
 				fullName: "",
@@ -121,7 +121,7 @@ describe("Testing userData Reducer", () => {
 			},
 			workspaceURL: "",
 			usageType: "",
-			currentPage: 2,
+			currentScreen: 2,
 		};
 
 		const receivedValue = userDataReducer(initialValue, {

@@ -11,14 +11,14 @@ const OnboardingScreens = () => {
 
 	return (
 		<div>
-			{state.currentPage === 1 ? (
+			{state.currentScreen === 1 ? (
 				<ScreenOne />
-			) : state.currentPage === 2 ? (
+			) : state.currentScreen === 2 ? (
 				<ScreenTwo />
-			) : state.currentPage === 3 ? (
+			) : state.currentScreen === 3 ? (
 				<ScreenThree />
 			) : (
-				state.currentPage === 4 && <ScreenFour />
+				state.currentScreen === 4 && <ScreenFour />
 			)}
 		</div>
 	);

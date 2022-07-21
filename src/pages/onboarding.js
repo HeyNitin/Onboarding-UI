@@ -4,15 +4,16 @@ import {
 	OnboardingScreens,
 } from "components/onboarding/index";
 import { useDocumentTitle } from "hooks/useDocumentTitle";
+import "styles/onboarding/onboarding.css";
 
 const Onboarding = () => {
 	useDocumentTitle("Welcome!");
 
 	return (
-		<div>
-			<header>
-				<img src={Images.logo} alt="logo" />
-				<span>Eden</span>
+		<div className="onboarding-component">
+			<header className="onboarding-header">
+				<img className="logo" src={Images.logo} alt="logo" />
+				<h3>Eden</h3>
 			</header>
 			<div>
 				<OnboardingNavbar />

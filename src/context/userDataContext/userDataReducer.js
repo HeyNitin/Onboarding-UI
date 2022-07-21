@@ -6,7 +6,7 @@ const initialValue = {
 	},
 	workspaceURL: "",
 	usageType: "",
-	currentPage: 1,
+	currentScreen: 1,
 };
 
 const userDataReducer = (state, action) => {
@@ -33,7 +33,7 @@ const userDataReducer = (state, action) => {
 			return { ...state, usageType: action.payload };
 
 		case "nextPage":
-			return { ...state, currentPage: state.currentPage + 1 };
+			return { ...state, currentScreen: state.currentScreen + 1 };
 
 		default:
 			return state;
