@@ -14,13 +14,12 @@ const ScreenThree = () => {
 	};
 
 	return (
-		<div>
+		<div className="form">
 			<h2>How are you planning to use Eden?</h2>
-			<p>
-				<small>We'll streamline your setup experience accordingly.</small>
-			</p>
-			<div>
+			<small>We'll streamline your setup experience accordingly.</small>
+			<div className="usage-options">
 				<div
+					className={`option ${state.usageType === "individual" && "active"}`}
 					onClick={() => dispatch({ type: "usageType", payload: "individual" })}
 				>
 					<img
@@ -31,18 +30,21 @@ const ScreenThree = () => {
 						}
 						alt="user"
 					/>
-					<p>For myself</p>
-					<p>Write better. Think more clearly. Stay organized</p>
+					<h5>For myself</h5>
+					<small>Write better. Think more clearly. Stay organized</small>
 				</div>
-				<div onClick={() => dispatch({ type: "usageType", payload: "team" })}>
+				<div
+					className={`option ${state.usageType === "team" && "active"}`}
+					onClick={() => dispatch({ type: "usageType", payload: "team" })}
+				>
 					<img
 						src={
 							state.usageType === "team" ? Images.groupColored : Images.group
 						}
 						alt="team"
 					/>
-					<p>With my team</p>
-					<p>Wikis, docs, tasks & projects, all in one place</p>
+					<h5>With my team</h5>
+					<small>Wikis, docs, tasks & projects, all in one place</small>
 				</div>
 			</div>
 			<button onClick={() => submitHandler()}>Create Workspace</button>

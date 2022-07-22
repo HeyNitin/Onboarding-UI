@@ -20,12 +20,10 @@ const ScreenTwo = () => {
 			}}
 		>
 			<h2>Let's set up a home for all your work</h2>
-			<p>
-				<small>You can always create another workspace later.</small>
-			</p>
+			<small>You can always create another workspace later.</small>
 			<div>
 				<label htmlFor="workspaceName">Workspace Name</label>
-				<div>
+				<div className="input-box">
 					<input
 						onChange={(e) =>
 							dispatch({ type: "workspaceName", payload: e.target.value })
@@ -38,7 +36,7 @@ const ScreenTwo = () => {
 			</div>
 			<div>
 				<label htmlFor="workspaceURL">Workspace URL (optional)</label>
-				<div>
+				<div className="input-box">
 					<span>www.eden.com/</span>
 					<input
 						onChange={(e) =>
