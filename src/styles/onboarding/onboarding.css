@@ -1,4 +1,5 @@
 @import "onboarding-navbar.css";
+@import "onboarding-form.css";
 
 .onboarding-component {
 	position: fixed;

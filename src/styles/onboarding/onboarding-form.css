@@ -1,0 +1,16 @@
+.onboarding-form form {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.onboarding-form form h2,
+.onboarding-form form p {
+	text-align: center;
+}
+
+.onboarding-form input,
+.onboarding-form button {
+	width: 18rem;
+}

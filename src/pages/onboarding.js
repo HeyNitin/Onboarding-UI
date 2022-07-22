@@ -15,12 +15,8 @@ const Onboarding = () => {
 				<img className="logo" src={Images.logo} alt="logo" />
 				<h3>Eden</h3>
 			</header>
-			<div>
-				<OnboardingNavbar />
-			</div>
-			<div>
-				<OnboardingScreens />
-			</div>
+			<OnboardingNavbar />
+			<OnboardingScreens />
 		</div>
 	);
 };

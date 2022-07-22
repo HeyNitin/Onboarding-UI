@@ -18,12 +18,13 @@ const ScreenOne = () => {
 				e.preventDefault();
 				submitHandler();
 			}}
+			className="form"
 		>
 			<h2>Welcome! First things first...</h2>
-			<p>
-				<small>You can always change them later.</small>
-			</p>
-			<div>
+
+			<small>You can always change them later.</small>
+
+			<div className="input-box">
 				<label htmlFor="fullName">Full Name</label>
 				<div>
 					<input
@@ -36,7 +37,7 @@ const ScreenOne = () => {
 					/>
 				</div>
 			</div>
-			<div>
+			<div className="input-box">
 				<label htmlFor="displayName">Display Name</label>
 				<div>
 					<input

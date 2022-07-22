@@ -10,7 +10,7 @@ const OnboardingScreens = () => {
 	const { state } = useUserData();
 
 	return (
-		<div>
+		<div className="onboarding-form">
 			{state.currentScreen === 1 ? (
 				<ScreenOne />
 			) : state.currentScreen === 2 ? (
