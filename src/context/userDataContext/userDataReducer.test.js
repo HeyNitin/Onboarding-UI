@@ -2,26 +2,18 @@ import { userDataReducer } from "context/userDataContext/userDataReducer";
 
 describe("Testing userData Reducer", () => {
 	const initialValue = {
-		names: {
-			fullName: "",
-			displayName: "",
-			workspaceName: "",
-		},
-		workspaceURL: "",
+		fullName: "",
+		displayName: "",
+		workspaces: [],
 		usageType: "",
-		currentScreen: 1,
 	};
 
 	test("Testing updating fullName of user", () => {
 		const expectedValue = {
-			names: {
-				fullName: "Nitin Kalra",
-				displayName: "",
-				workspaceName: "",
-			},
-			workspaceURL: "",
+			fullName: "Nitin Kalra",
+			displayName: "",
+			workspaces: [],
 			usageType: "",
-			currentScreen: 1,
 		};
 
 		const receivedValue = userDataReducer(initialValue, {
@@ -34,14 +26,10 @@ describe("Testing userData Reducer", () => {
 
 	test("Testing updating displayName of user", () => {
 		const expectedValue = {
-			names: {
-				fullName: "",
-				displayName: "HeyNitin",
-				workspaceName: "",
-			},
-			workspaceURL: "",
+			fullName: "",
+			displayName: "HeyNitin",
+			workspaces: [],
 			usageType: "",
-			currentScreen: 1,
 		};
 
 		const receivedValue = userDataReducer(initialValue, {
@@ -52,41 +40,17 @@ describe("Testing userData Reducer", () => {
 		expect(receivedValue).toEqual(expectedValue);
 	});
 
-	test("Testing updating workspaceName of user", () => {
+	test("Testing addition of new workspace", () => {
 		const expectedValue = {
-			names: {
-				fullName: "",
-				displayName: "",
-				workspaceName: "Nitin Kalra",
-			},
-			workspaceURL: "",
+			fullName: "",
+			displayName: "",
+			workspaces: [{ workspaceName: "001", workspaceURL: "" }],
 			usageType: "",
-			currentScreen: 1,
 		};
 
 		const receivedValue = userDataReducer(initialValue, {
-			type: "workspaceName",
-			payload: "Nitin Kalra",
-		});
-
-		expect(receivedValue).toEqual(expectedValue);
-	});
-
-	test("Testing updating workspaceURL of user", () => {
-		const expectedValue = {
-			names: {
-				fullName: "",
-				displayName: "",
-				workspaceName: "",
-			},
-			workspaceURL: "www.nitinkalra.me",
-			usageType: "",
-			currentScreen: 1,
-		};
-
-		const receivedValue = userDataReducer(initialValue, {
-			type: "workspaceURL",
-			payload: "www.nitinkalra.me",
+			type: "addWorkspace",
+			payload: { workspaceName: "001", workspaceURL: "" },
 		});
 
 		expect(receivedValue).toEqual(expectedValue);
@@ -94,38 +58,15 @@ describe("Testing userData Reducer", () => {
 
 	test("Testing updating usageType of user", () => {
 		const expectedValue = {
-			names: {
-				fullName: "",
-				displayName: "",
-				workspaceName: "",
-			},
-			workspaceURL: "",
+			fullName: "",
+			displayName: "",
+			workspaces: [],
 			usageType: "individual",
-			currentScreen: 1,
 		};
 
 		const receivedValue = userDataReducer(initialValue, {
 			type: "usageType",
 			payload: "individual",
-		});
-
-		expect(receivedValue).toEqual(expectedValue);
-	});
-
-	test("Testing updating currentScreen of user", () => {
-		const expectedValue = {
-			names: {
-				fullName: "",
-				displayName: "",
-				workspaceName: "",
-			},
-			workspaceURL: "",
-			usageType: "",
-			currentScreen: 2,
-		};
-
-		const receivedValue = userDataReducer(initialValue, {
-			type: "nextPage",
 		});
 
 		expect(receivedValue).toEqual(expectedValue);

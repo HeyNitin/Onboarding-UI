@@ -1,13 +1,15 @@
 import { useUserData } from "context/userDataContext/userDataContext";
 import { Images } from "assets";
 import { showToast } from "components/toast/toast";
+import { useOnboardingPage } from "context/onboardingContext/onboardingPageContext";
 
 const ScreenThree = () => {
 	const { state, dispatch } = useUserData();
+	const { setCurrentPage } = useOnboardingPage();
 
 	const submitHandler = () => {
 		if (state.usageType) {
-			dispatch({ type: "nextPage" });
+			setCurrentPage((prev) => prev + 1);
 		} else {
 			showToast("error", "Please select one of the options");
 		}

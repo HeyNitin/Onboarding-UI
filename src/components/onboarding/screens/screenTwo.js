@@ -1,14 +1,32 @@
 import { showToast } from "components/toast/toast";
+import { useOnboardingPage } from "context/onboardingContext/onboardingPageContext";
 import { useUserData } from "context/userDataContext/userDataContext";
+import { useState } from "react";
+import { websiteValidator } from "services/validatorServices";
 
 const ScreenTwo = () => {
-	const { state, dispatch } = useUserData();
+	const [workspace, setWorkspace] = useState({
+		workspaceName: "",
+		workspaceURL: "",
+	});
+	const { dispatch } = useUserData();
+	const { setCurrentPage } = useOnboardingPage();
 
 	const submitHandler = () => {
-		if (state.names.workspaceName.trim() && state.workspaceURL.trim()) {
-			dispatch({ type: "nextPage" });
+		if (workspace.workspaceName.trim()) {
+			if (workspace.workspaceURL) {
+				if (websiteValidator(workspace.workspaceURL)) {
+					dispatch({ type: "addWorkspace", payload: workspace });
+					setCurrentPage((prev) => prev + 1);
+				} else {
+					showToast("error", "That's not a valid website");
+				}
+			} else {
+				dispatch({ type: "addWorkspace", payload: workspace });
+				setCurrentPage((prev) => prev + 1);
+			}
 		} else {
-			showToast("error", "Enter both fields");
+			showToast("error", "Enter workspace name");
 		}
 	};
 
@@ -26,9 +44,11 @@ const ScreenTwo = () => {
 				<div className="input-box">
 					<input
 						onChange={(e) =>
-							dispatch({ type: "workspaceName", payload: e.target.value })
+							setWorkspace((prev) => {
+								return { ...prev, workspaceName: e.target.value };
+							})
 						}
-						value={state.names.workspaceName}
+						value={workspace.workspaceName}
 						id="workspaceName"
 						placeholder="Eden"
 					/>
@@ -40,9 +60,11 @@ const ScreenTwo = () => {
 					<span>www.eden.com/</span>
 					<input
 						onChange={(e) =>
-							dispatch({ type: "workspaceURL", payload: e.target.value })
+							setWorkspace((prev) => {
+								return { ...prev, workspaceURL: e.target.value.trim() };
+							})
 						}
-						value={state.workspaceURL}
+						value={workspace.workspaceURL}
 						id="workspaceURL"
 						placeholder="Example"
 					/>

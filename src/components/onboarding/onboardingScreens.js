@@ -1,24 +1,24 @@
-import { useUserData } from "context/userDataContext/userDataContext";
 import {
 	ScreenFour,
 	ScreenOne,
 	ScreenThree,
 	ScreenTwo,
 } from "components/onboarding/screens/index";
+import { useOnboardingPage } from "context/onboardingContext/onboardingPageContext";
 
 const OnboardingScreens = () => {
-	const { state } = useUserData();
+	const { currentPage } = useOnboardingPage();
 
 	return (
 		<div className="onboarding-screens">
-			{state.currentScreen === 1 ? (
+			{currentPage === 1 ? (
 				<ScreenOne />
-			) : state.currentScreen === 2 ? (
+			) : currentPage === 2 ? (
 				<ScreenTwo />
-			) : state.currentScreen === 3 ? (
+			) : currentPage === 3 ? (
 				<ScreenThree />
 			) : (
-				state.currentScreen === 4 && <ScreenFour />
+				currentPage === 4 && <ScreenFour />
 			)}
 		</div>
 	);

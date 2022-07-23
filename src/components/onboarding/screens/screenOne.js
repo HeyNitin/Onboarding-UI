@@ -1,14 +1,25 @@
 import { showToast } from "components/toast/toast";
+import { useOnboardingPage } from "context/onboardingContext/onboardingPageContext";
 import { useUserData } from "context/userDataContext/userDataContext";
+import { nameValidator } from "services/validatorServices";
 
 const ScreenOne = () => {
 	const { state, dispatch } = useUserData();
+	const { setCurrentPage } = useOnboardingPage();
 
 	const submitHandler = () => {
-		if (state.names.fullName.trim() && state.names.displayName.trim()) {
-			dispatch({ type: "nextPage" });
+		if (state.fullName.trim() && state.displayName.trim()) {
+			if (nameValidator(state.fullName.trim())) {
+				setCurrentPage((prev) => prev + 1);
+			} else {
+				console.log(state.fullName.trim());
+				showToast(
+					"error",
+					"That's not a valid full name. It should contain both first and last name and both should be of atleast 3 characters"
+				);
+			}
 		} else {
-			showToast("error", "Enter both fields");
+			showToast("error", "Enter all fields");
 		}
 	};
 
@@ -29,7 +40,7 @@ const ScreenOne = () => {
 						onChange={(e) =>
 							dispatch({ type: "fullName", payload: e.target.value })
 						}
-						value={state.names.fullName}
+						value={state.fullName}
 						id="fullName"
 						placeholder="Steve Jobs"
 					/>
@@ -42,7 +53,7 @@ const ScreenOne = () => {
 						onChange={(e) =>
 							dispatch({ type: "displayName", payload: e.target.value })
 						}
-						value={state.names.displayName}
+						value={state.displayName}
 						id="displayName"
 						placeholder="Steve"
 					/>

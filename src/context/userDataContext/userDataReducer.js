@@ -1,39 +1,31 @@
 const initialValue = {
-	names: {
-		fullName: "",
-		displayName: "",
-		workspaceName: "",
-	},
-	workspaceURL: "",
+	fullName: "",
+	displayName: "",
+	workspaces: [{ workspaceName: "", workspaceURL: "" }],
 	usageType: "",
-	currentScreen: 1,
 };
 
 const userDataReducer = (state, action) => {
 	switch (action.type) {
 		case "fullName":
-			return { ...state, names: { ...state.names, fullName: action.payload } };
+			return { ...state, fullName: action.payload };
 
 		case "displayName":
+			return { ...state, displayName: action.payload };
+
+		case "addWorkspace":
 			return {
 				...state,
-				names: { ...state.names, displayName: action.payload },
+				workspaces: [
+					...state.workspaces,
+					{
+						workspaceName: action.payload.workspaceName,
+						workspaceURL: action.payload.workspaceURL,
+					},
+				],
 			};
-
-		case "workspaceName":
-			return {
-				...state,
-				names: { ...state.names, workspaceName: action.payload },
-			};
-
-		case "workspaceURL":
-			return { ...state, workspaceURL: action.payload };
-
 		case "usageType":
 			return { ...state, usageType: action.payload };
-
-		case "nextPage":
-			return { ...state, currentScreen: state.currentScreen + 1 };
 
 		default:
 			return state;

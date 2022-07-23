@@ -1,4 +1,5 @@
 import { useUserData } from "context/userDataContext/userDataContext";
+import { getFirstName } from "services/getFirstNameService";
 
 const ScreenFour = () => {
 	const { state } = useUserData();
@@ -7,7 +8,7 @@ const ScreenFour = () => {
 			<div className="check">
 				<span className="material-icons-outlined">check</span>
 			</div>
-			<h2>Congratulations, {state.names.fullName}!</h2>
+			<h2>Congratulations, {getFirstName(state.fullName)}!</h2>
 			<small>
 				You have completed the onboarding, you can start using Eden!
 			</small>
