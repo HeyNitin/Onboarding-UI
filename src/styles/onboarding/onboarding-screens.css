@@ -34,6 +34,7 @@ form,
 	flex-grow: 1;
 	border: none;
 	padding: 0.5rem;
+	border-radius: 5px;
 }
 
 .input-box span {
