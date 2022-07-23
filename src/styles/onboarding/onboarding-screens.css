@@ -1,5 +1,5 @@
 form,
-.last-page {
+.last-screen {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -96,7 +96,7 @@ form,
 	border: 1px solid var(--primary-color);
 }
 
-.last-page .check {
+.last-screen .check {
 	width: 2rem;
 	height: 2rem;
 	padding: 0.5rem;

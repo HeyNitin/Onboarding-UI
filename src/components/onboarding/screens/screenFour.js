@@ -3,7 +3,7 @@ import { useUserData } from "context/userDataContext/userDataContext";
 const ScreenFour = () => {
 	const { state } = useUserData();
 	return (
-		<div className="last-page">
+		<div className="last-screen">
 			<div className="check">
 				<span className="material-icons-outlined">check</span>
 			</div>
