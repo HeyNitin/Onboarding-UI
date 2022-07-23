@@ -5,3 +5,33 @@ body {
 	margin: 0;
 	font-family: "Inter";
 }
+
+@media screen and (min-width: 480px) {
+	:root {
+		font-size: 14px;
+	}
+}
+
+@media screen and (min-width: 720px) {
+	:root {
+		font-size: 16px;
+	}
+}
+
+@media screen and (min-width: 1080px) {
+	:root {
+		font-size: 18px;
+	}
+}
+
+@media screen and (min-width: 1480px) {
+	:root {
+		font-size: 20px;
+	}
+}
+
+@media screen and (min-width: 2080px) {
+	:root {
+		font-size: 24px;
+	}
+}
