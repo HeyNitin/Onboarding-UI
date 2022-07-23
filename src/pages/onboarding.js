@@ -13,7 +13,7 @@ const Onboarding = () => {
 		<div className="onboarding-component">
 			<header className="onboarding-header">
 				<img className="logo" src={Images.logo} alt="logo" />
-				<h3>Eden</h3>
+				<span>Eden</span>
 			</header>
 			<OnboardingNavbar />
 			<OnboardingScreens />

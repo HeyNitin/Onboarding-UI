@@ -14,7 +14,12 @@ const ScreenThree = () => {
 	};
 
 	return (
-		<div className="form">
+		<form
+			onSubmit={(e) => {
+				e.preventDefault();
+				submitHandler();
+			}}
+		>
 			<h2>How are you planning to use Eden?</h2>
 			<small>We'll streamline your setup experience accordingly.</small>
 			<div className="usage-options">
@@ -47,8 +52,8 @@ const ScreenThree = () => {
 					<small>Wikis, docs, tasks & projects, all in one place</small>
 				</div>
 			</div>
-			<button onClick={() => submitHandler()}>Create Workspace</button>
-		</div>
+			<button>Create Workspace</button>
+		</form>
 	);
 };
 

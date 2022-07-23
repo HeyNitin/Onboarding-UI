@@ -1,0 +1,114 @@
+form,
+.last-page {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.onboarding-screens h2 {
+	margin: 0;
+}
+
+.onboarding-screens small {
+	color: var(--dark-gray-color);
+	text-align: center;
+	margin: 0 0 1rem 0;
+}
+
+.onboarding-screens form label {
+	font-size: 0.8rem;
+}
+
+.input-box {
+	display: flex;
+	width: 20rem;
+	border: 1px solid var(--border-color);
+	border-radius: 5px;
+	color: var(--border-color);
+	margin: 0.2rem 0;
+}
+
+.input-box input {
+	flex-grow: 1;
+	border: none;
+	padding: 0.5rem;
+}
+
+.input-box span {
+	border-right: 1px solid var(--border-color);
+	background-color: var(--border-color);
+	color: var(--dark-gray-color);
+	font-size: 0.8rem;
+	padding: 0.6rem;
+	border-radius: 5px 0 0 5px;
+	height: 100%;
+	margin-top: -0.05rem;
+	margin-left: -0.05rem;
+}
+
+.input-box input:focus {
+	outline: none;
+}
+
+::placeholder {
+	color: var(--gray-color);
+	opacity: 1;
+}
+
+.onboarding-screens button {
+	background-color: var(--primary-color);
+	color: var(--border-color);
+	padding: 0.8rem;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 21rem;
+	margin-top: 1rem;
+	border: none;
+	box-sizing: border-box;
+}
+
+.usage-options {
+	display: flex;
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+.usage-options > * {
+	width: 10rem;
+	border: 1px solid var(--border-color);
+	box-sizing: border-box;
+	padding: 1rem;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.usage-options .option img {
+	height: 1.2rem;
+}
+
+.usage-options h5 {
+	margin: 0.5rem 0;
+}
+
+.usage-options .active {
+	border: 1px solid var(--primary-color);
+}
+
+.last-page .check {
+	width: 2rem;
+	height: 2rem;
+	padding: 0.5rem;
+	border-radius: 100%;
+	color: white;
+	background-color: var(--primary-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.onboarding-screens a button {
+	margin: 0;
+}

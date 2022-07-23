@@ -1,18 +1,23 @@
-import { Images } from "assets";
 import { useUserData } from "context/userDataContext/userDataContext";
 
 const ScreenFour = () => {
 	const { state } = useUserData();
 	return (
-		<div>
-			<img src={Images.checkColored} alt="check" />
+		<div className="last-page">
+			<div className="check">
+				<span className="material-icons-outlined">check</span>
+			</div>
 			<h2>Congratulations, {state.names.fullName}!</h2>
-			<p>
-				<small>
-					You have completed the onboarding, you can start using Eden!
-				</small>
-			</p>
-			<button>Launch Eden</button>
+			<small>
+				You have completed the onboarding, you can start using Eden!
+			</small>
+			<a
+				href="https://github.com/HeyNitin/Onboarding-UI"
+				target="_blank"
+				rel="noreferrer"
+			>
+				<button>Launch Eden</button>
+			</a>
 		</div>
 	);
 };
