@@ -6,4 +6,6 @@
   
 </div>
 
+## Description
+
 This is an onboarding component which can be used to onboard your user in your next web app. Feel free to fork.
